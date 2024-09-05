@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import CategoryList from "./CategoryList";
+import HTMLEditor from "./HTMLEditor";
 import { htmlCategories } from "../data/htmlCategories";
-
 
 const HTMLCheatsheet: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,6 +28,7 @@ const HTMLCheatsheet: React.FC = () => {
           </button>
         </span>
       </div>
+      <HTMLEditor /> 
       <CategoryList
         categories={htmlCategories}
         searchQuery={searchQuery}

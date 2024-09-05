@@ -1,5 +1,6 @@
-import "./App.css";
-import "./HTMLCheatsheet.css";
+import "./styles/App.css";
+import "./styles/HTMLCheatsheet.css";
+import "./styles/HTMLEditor.css";
 import HTMLCheatsheet from "./components/HTMLCheatsheet";
 
 function App() {

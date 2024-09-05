@@ -1,0 +1,53 @@
+.html-editor-container {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+}
+
+.html-editor-container h2 {
+  cursor: pointer;
+  background-color: #f9fafb;
+  padding: 16px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.html-editor {
+  display: flex;
+  padding: 16px;
+}
+
+.html-editor h3 {
+  color: black;
+}
+
+.editor-pane,
+.preview-pane {
+  flex: 1;
+  padding: 10px;
+}
+
+.preview-pane {
+  background-color: white;
+}
+
+.preview-pane h3 {
+  color: black;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  color: black;
+  background-color: #b4b2b2;
+}
+
+.preview-pane {
+  border: 1px solid #ccc;
+  padding: 10px;
+}

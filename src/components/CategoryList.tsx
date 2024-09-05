@@ -53,10 +53,10 @@ const CategoryList: React.FC<CategoryListProps> = ({
           </h2>
           {isExpanded(category.name) && (
             <ul>
-              {category.elements.map((element) => (
+              {category.elements.map((element, index) => (
                 <>
                   <li
-                    key={element.name}
+                    key={`${element.name}-${index}`}
                     className={
                       element.name.toLowerCase().includes(searchQuery) ||
                       element.description.toLowerCase().includes(searchQuery)
