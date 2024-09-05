@@ -65,7 +65,14 @@ const CategoryList: React.FC<CategoryListProps> = ({
                 >
                   <div className="text-left">
                     <span>
-                      <strong>{element.name}</strong>: {element.description}
+                      <a
+                        href={`https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element.name.replace(/[<>]/g, '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <strong>{element.name}</strong>
+                      </a>
+                      : {element.description}
                     </span>
                   </div>
                   <div className="flex">

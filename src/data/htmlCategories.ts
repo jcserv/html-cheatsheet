@@ -21,7 +21,7 @@ export const htmlCategories: Category[] = [
       { name: '<!DOCTYPE>', description: 'Defines the document type', example: '<!DOCTYPE html>', shouldNotRenderExample: true },
       { name: '<title>', description: 'Defines a title for the document', example: '<title>My Web Page</title>', shouldNotRenderExample: true },
       { name: '<div>', description: 'Defines a block-level section in a document', example: '<div class="container">...</div>' },
-      { name: '<span>', description: 'Defines an inline section in a document', example: '<p>This is \n  <span style="color: red;">important</span> text.\n</p>' },
+      { name: '<span>', description: 'Defines an inline section in a document', example: '<p>I\'m \n  <span style="color: red;">important</span>\n</p>' },
     ],
   },
   {
@@ -30,7 +30,7 @@ export const htmlCategories: Category[] = [
       { name: '<base>', description: 'Specifies the base URL/target for all relative URLs in a document', example: '<base href="https://www.example.com/">\n<a href="/404">Click here</a>' },
       { name: '<link>', description: 'Defines the relationship between a document and an external resource', example: '<link rel="stylesheet" href="styles.css">', shouldNotRenderExample: true },
       { name: '<meta>', description: 'Defines metadata about an HTML document', example: '<meta charset="UTF-8">', shouldNotRenderExample: true },
-      { name: '<style>', description: 'Defines style information for a document', example: '<style>body { background-color: #000000; }</style>', shouldNotRenderExample: true },
+      { name: '<style>', description: 'Defines style information for a document', example: '<style>\n  body { background-color: #000000; }\n</style>', shouldNotRenderExample: true },
     ],
   },
   {
@@ -70,7 +70,7 @@ export const htmlCategories: Category[] = [
   {
     name: 'Links',
     elements: [
-      { name: '<a>', description: 'Defines a hyperlink', example: '<a href="https://www.example.com">Visit Example.com</a>' },
+      { name: '<a>', description: 'Defines a hyperlink', example: '<a href="https://www.example.com">\n  Visit Example.com\n</a>' },
       { name: '<nav>', description: 'Defines navigation links', example: '<nav>\n  <a href="#home">Home</a>\n  <a href="#about">About</a>\n</nav>' },
     ],
   },
@@ -81,9 +81,9 @@ export const htmlCategories: Category[] = [
       { name: '<audio>', description: 'Defines sound content', example: '<audio controls>\n  <source src="audio.mp3" type="audio/mpeg">\n</audio>' },
       { name: '<video>', description: 'Defines a video or movie', example: '<video width="320" height="240" controls>\n  <source src="movie.mp4" type="video/mp4">\n</video>' },
       { name: '<source>', description: 'Defines multiple media resources for media elements', example: '<source src="movie.mp4" type="video/mp4">' },
-      { name: '<track>', description: 'Defines text tracks for media elements', example: '<track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">', shouldNotRenderExample: true },
-      { name: '<figure>', description: 'Specifies self-contained content', example: '<figure>\n  <img src="https://picsum.photos/100" alt="Description">\n  <figcaption>Figure caption</figcaption>\n</figure>' },
-      { name: '<figcaption>', description: 'Defines a caption for a <figure> element', example: '<figcaption>This is a caption for the figure</figcaption>' },
+      { name: '<track>', description: 'Defines text tracks for media elements', example: '<track src="subtitles_en.vtt"\n kind="subtitles" srclang="en"\n label="English">', shouldNotRenderExample: true },
+      { name: '<figure>', description: 'Specifies self-contained content', example: '<figure>\n  <img src="https://picsum.photos/100">\n  <figcaption>Figure caption</figcaption>\n</figure>' },
+      { name: '<figcaption>', description: 'Defines a caption for a <figure> element', example: '<figcaption>\n  This is a caption for the figure\n</figcaption>' },
     ],
   },
   {
@@ -105,8 +105,8 @@ export const htmlCategories: Category[] = [
     name: 'Forms and Input',
     elements: [
       { name: '<form>', description: 'Defines an HTML form for user input', example: '<form action="/submit" method="post">\n  <!-- Form elements go here -->\n</form>' },
-      { name: '<input>', description: 'Defines an input control', example: '<input type="text" name="username" placeholder="Enter username">' },
-      { name: '<textarea>', description: 'Defines a multiline input control', example: '<textarea name="message" rows="4" cols="50">Enter your message here</textarea>' },
+      { name: '<input>', description: 'Defines an input control', example: '<input type="text" name="username" \nplaceholder="Enter username">' },
+      { name: '<textarea>', description: 'Defines a multiline input control', example: '<textarea name="message" rows="4" cols="40">\n  Enter your message here\n</textarea>' },
       { name: '<button>', description: 'Defines a clickable button', example: '<button type="submit">Submit</button>' },
       { name: '<select>', description: 'Defines a drop-down list', example: '<select name="cars">\n  <option value="volvo">Volvo</option>\n  <option value="saab">Saab</option>\n</select>' },
       { name: '<option>', description: 'Defines an option in a drop-down list', example: '<option value="volvo">Volvo</option>' },
@@ -115,15 +115,15 @@ export const htmlCategories: Category[] = [
       { name: '<fieldset>', description: 'Groups related elements in a form', example: '<fieldset>\n  <legend>Personal Information</legend>\n  <!-- Form elements go here -->\n</fieldset>' },
       { name: '<legend>', description: 'Defines a caption for a <fieldset> element', example: '<legend>Personal Information</legend>' },
       { name: '<datalist>', description: 'Specifies a list of pre-defined options for input controls', example: '<input list="browsers">\n<datalist id="browsers">\n  <option value="Chrome">\n  <option value="Firefox">\n</datalist>' },
-      { name: '<output>', description: 'Defines the result of a calculation', example: '<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">\n  <input type="range" name="a" value="50"> +\n  <input type="number" name="b" value="50"> =\n  <output name="result"></output>\n</form>' },
+      { name: '<output>', description: 'Defines the result of a calculation', example: '<form \noninput="result.value=parseInt(a.value)+\nparseInt(b.value)">\n  <input type="range" name="a" value="50"> +\n  <input type="number" name="b" value="50"> =\n  <output name="result"></output>\n</form>' },
     ],
   },
   {
     name: 'Scripting',
     elements: [
       { name: '<script>', description: 'Defines a client-side script', example: '<script>\n  console.log("Hello, World!");\n</script>', shouldNotRenderExample: true },
-      { name: '<noscript>', description: 'Defines an alternate content for users that do not support client-side scripts', example: '<noscript>Your browser does not support JavaScript!</noscript>', shouldNotRenderExample: true },
-      { name: '<canvas>', description: 'Used to draw graphics, on the fly, via scripting (usually JavaScript)', example: '<canvas id="myCanvas" width="200" height="100"></canvas>', shouldNotRenderExample: true },
+      { name: '<noscript>', description: 'Defines an alternate content for users that do not support client-side scripts', example: '<noscript>\n  Your browser does not support JavaScript!\n</noscript>', shouldNotRenderExample: true },
+      { name: '<canvas>', description: 'Used to draw graphics, on the fly, via scripting (usually JavaScript)', example: '<canvas id="myCanvas" width="200" \n height="100"></canvas>', shouldNotRenderExample: true },
     ],
   },
   {
@@ -133,9 +133,9 @@ export const htmlCategories: Category[] = [
       { name: '<aside>', description: 'Defines content aside from the page content', example: '<aside>\n  <h4>Related links</h4>\n  <ul>\n    <li><a href="#">Link 1</a></li>\n    <li><a href="#">Link 2</a></li>\n  </ul>\n</aside>' },
       { name: '<details>', description: 'Defines additional details that the user can view or hide', example: '<details>\n  <summary>Click to view more</summary>\n  <p>Additional information...</p>\n</details>' },
       { name: '<summary>', description: 'Defines a visible heading for a <details> element', example: '<summary>Click to view more</summary>' },
-      { name: '<footer>', description: 'Defines a footer for a document or section', example: '<footer>\n  <p>&copy; 2023 My Website. All rights reserved.</p>\n</footer>' },
+      { name: '<footer>', description: 'Defines a footer for a document or section', example: '<footer>\n  <p>&copy; 2023 My Website. \nAll rights reserved.</p>\n</footer>' },
       { name: '<header>', description: 'Defines a header for a document or section', example: '<header>\n  <h1>Welcome to My Website</h1>\n  <nav><!-- Navigation menu --></nav>\n</header>' },
-      { name: '<main>', description: 'Specifies the main content of a document', example: '<main>\n  <h1>Main Content</h1>\n  <p>This is the main content of the page.</p>\n</main>' },
+      { name: '<main>', description: 'Specifies the main content of a document', example: '<main>\n  <h1>Main Content</h1>\n  <p>\n    This is the main content of the page.\n  </p>\n</main>' },
       { name: '<section>', description: 'Defines a section in a document', example: '<section>\n  <h2>Section Title</h2>\n  <p>Section content...</p>\n</section>' },
       { name: '<time>', description: 'Defines a date/time', example: '<time datetime="2023-07-21 20:00">\n  July 21, 2023 at 8:00 PM\n</time>' },
     ],
@@ -143,9 +143,9 @@ export const htmlCategories: Category[] = [
   {
     name: 'Embedded Content',
     elements: [
-      { name: '<embed>', description: 'Defines a container for an external application', example: '<embed src="game.swf" width="300" height="300">' },
-      { name: '<iframe>', description: 'Defines an inline frame', example: '<iframe src="https://www.example.com" width="200">\n</iframe>' },
-      { name: '<object>', description: 'Defines an embedded object', example: '<object data="file.pdf" type="application/pdf" width="300" height="200"></object>', shouldNotRenderExample: true },
+      { name: '<embed>', description: 'Defines a container for an external application', example: '<embed src="game.swf" width="300" \nheight="300">' },
+      { name: '<iframe>', description: 'Defines an inline frame', example: '<iframe src="https://www.example.com" \nwidth="200">\n</iframe>' },
+      { name: '<object>', description: 'Defines an embedded object', example: '<object data="file.pdf" \ntype="application/pdf" width="300" \nheight="200"></object>', shouldNotRenderExample: true },
       { name: '<param>', description: 'Defines a parameter for an object', example: '<object data="movie.swf">\n  <param name="autoplay" value="true">\n</object>' },
     ],
   },
