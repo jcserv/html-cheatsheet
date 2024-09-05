@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Category } from "../data/htmlCategories";
+import { Category, htmlCategories } from "../data/htmlCategories";
 
 interface CategoryListProps {
   categories: Category[];
@@ -16,11 +16,11 @@ const CategoryList: React.FC<CategoryListProps> = ({
 
   useEffect(() => {
     if (expandAll) {
-        setExpandedCategories(categories.map((category) => category.name));
+      setExpandedCategories(categories.map((category) => category.name));
     } else {
-        setExpandedCategories([]);
+      setExpandedCategories([]);
     }
-  }, [categories, expandAll])
+  }, [categories, expandAll]);
 
   const toggleCategory = (categoryName: string) => {
     setExpandedCategories((prev) =>
@@ -30,7 +30,8 @@ const CategoryList: React.FC<CategoryListProps> = ({
     );
   };
 
-  const isExpanded = (categoryName: string) => expandedCategories.includes(categoryName);
+  const isExpanded = (categoryName: string) =>
+    expandedCategories.includes(categoryName);
 
   const matchesSearch = (category: Category) =>
     category.name.toLowerCase().includes(searchQuery) ||
@@ -54,44 +55,50 @@ const CategoryList: React.FC<CategoryListProps> = ({
             <ul>
               {category.elements.map((element) => (
                 <>
-                <li
-                  key={element.name}
-                  className={
-                    element.name.toLowerCase().includes(searchQuery) ||
-                    element.description.toLowerCase().includes(searchQuery)
-                      ? ""
-                      : "hidden"
-                  }
-                >
-                  <div className="text-left">
-                    <span>
-                      <a
-                        href={`https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element.name.replace(/[<>]/g, '')}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <strong>{element.name}</strong>
-                      </a>
-                      : {element.description}
-                    </span>
-                  </div>
-                  <div className="flex">
-                    <span className="text-left-w-50">
-                      <pre className="code-block">
-                        Code: <code>{`\n${element.example}`}</code>
-                      </pre>
-                    </span>
-                    {!element.shouldNotRenderExample && (
-                      <span className="w-50">
-                        Example:
-                        <div
-                          dangerouslySetInnerHTML={{ __html: element.example }}
-                        />
+                  <li
+                    key={element.name}
+                    className={
+                      element.name.toLowerCase().includes(searchQuery) ||
+                      element.description.toLowerCase().includes(searchQuery)
+                        ? ""
+                        : "hidden"
+                    }
+                  >
+                    <div className="text-left">
+                      <span>
+                        <a
+                          href={`https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${
+                            element.name === htmlCategories[2].elements[1].name
+                              ? "Heading_Elements"
+                              : element.name.replace(/[<>]/g, "")
+                          }`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <strong>{element.name}</strong>
+                        </a>
+                        : {element.description}
                       </span>
-                    )}
-                  </div>
-                </li>
-                <hr />
+                    </div>
+                    <div className="flex">
+                      <span className="text-left-w-50">
+                        <pre className="code-block">
+                          Code: <code>{`\n${element.example}`}</code>
+                        </pre>
+                      </span>
+                      {!element.shouldNotRenderExample && (
+                        <span className="w-50">
+                          Example:
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: element.example,
+                            }}
+                          />
+                        </span>
+                      )}
+                    </div>
+                  </li>
+                  <hr />
                 </>
               ))}
             </ul>

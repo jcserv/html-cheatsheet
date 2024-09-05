@@ -87,6 +87,10 @@ button:hover {
   color: #374151;
 }
 
+footer p {
+    color: white;
+}
+
 /* tailwind DUPE */
 .text-left {
   text-align: left;

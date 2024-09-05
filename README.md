@@ -1,21 +1,16 @@
-# React + TypeScript + Vite
+# HTML Cheatsheet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This simple web app provides short descriptions of each and every HTML tag, as well as examples of how to use them.
 
-While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+The design is heavily influenced by the [Tailwind CSS Cheat Sheet](https://www.creative-tim.com/twcomponents/cheatsheet).
 
-## Deploy Your Own
+![visitors](https://img.shields.io/endpoint?url=https://vu-mi.com/api/v1/views?id=jcserv/html-cheatsheet)
 
-Deploy your own Vite project with Vercel.
+## Getting Started
+1. Clone the repository
+2. Run `pnpm i`
+3. Run `pnpm dev`
+4. Open [localhost:5173](http://localhost:5173) in your browser
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vite-react&template=vite-react)
-
-_Live Example: https://vite-react-example.vercel.app_
-
-### Deploying From Your Terminal
-
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
-
-```shell
-$ vercel
-```
+## Contributing
+* Contributions are welcome! Please open an issue or submit a PR.
