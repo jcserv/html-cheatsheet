@@ -53,6 +53,7 @@ const CategoryList: React.FC<CategoryListProps> = ({
           {isExpanded(category.name) && (
             <ul>
               {category.elements.map((element) => (
+                <>
                 <li
                   key={element.name}
                   className={
@@ -62,19 +63,19 @@ const CategoryList: React.FC<CategoryListProps> = ({
                       : "hidden"
                   }
                 >
-                  <div style={{ textAlign: "left" }}>
+                  <div className="text-left">
                     <span>
                       <strong>{element.name}</strong>: {element.description}
                     </span>
                   </div>
-                  <div style={{ display: "flex" }}>
-                    <span style={{ textAlign: "left", width: "50%" }}>
+                  <div className="flex">
+                    <span className="text-left-w-50">
                       <pre className="code-block">
                         Code: <code>{`\n${element.example}`}</code>
                       </pre>
                     </span>
                     {!element.shouldNotRenderExample && (
-                      <span style={{ width: "50%" }}>
+                      <span className="w-50">
                         Example:
                         <div
                           dangerouslySetInnerHTML={{ __html: element.example }}
@@ -83,6 +84,8 @@ const CategoryList: React.FC<CategoryListProps> = ({
                     )}
                   </div>
                 </li>
+                <hr />
+                </>
               ))}
             </ul>
           )}
